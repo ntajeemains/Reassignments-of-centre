@@ -1,313 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:site_name" content="Notifications - NTA">
-    <meta property="og:title" content="Notifications - NTA" />
-    <meta property="og:description" content="PUBLIC NOTICE: Reassigning the Centres for JEE(Main) – 2025 Session 2" />
-    <meta property="og:image:secure_url" itemprop="image" content="https://i.imgur.com/uSAcp45_d.webp">
-    <meta property="og:type" content="website" />
-    <title>Notifications - NTA</title>
-</head>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NTA | Home</title>
+  <style>
     body {
-        margin: 0;
-        font-family: sans-serif;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
     }
 
-    #banner1 {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 1rem;
-        width: calc(100% - 2rem);
+    header {
+      background-color: #002147;
+      color: white;
     }
 
-    #banner1 a {
-        text-decoration: none;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #004;
-        padding: 0 1rem;
-
+    .top-bar {
+      background: #ccc;
+      color: black;
+      padding: 5px;
+      text-align: center;
     }
 
-    #banner2 {
-        width: 100%;
-        color: black;
-        background: yellow;
-        font-weight: bold;
-        text-align: center;
-        font-size: 1.2rem;
-        line-height: 2rem;
-        padding: 1rem 0;
+    .logo-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 10px;
+      color: black;
     }
 
-    #space {
-        height: 4rem;
+    .logo-bar img {
+      height: 50px;
     }
 
-    div.text {
-        margin: 1rem;
-        color: #333
+    nav ul {
+      list-style: none;
+      background-color: orange;
+      padding: 10px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
     }
 
-        @keyframes scroll {
-            from {
-                margin-left: 0px;
-            }
-            to {
-                margin-left: calc(-100vw - 80rem);
-            }
-        }
-
-    div#scrollNews {
-        width: 100%;
-        overflow: hidden;
-        background: red;
-        margin-bottom: 1rem;
-
-    }
-    div#scrollNews span {
-        overflow: hidden;
-        display: block;
-        width: max-content;
-        line-height: 2rem;
-        padding: 0 0 0 110vw;
-        animation: scroll 15s infinite linear;
-        color: white;
-        font-weight: bold;
+    main {
+      padding: 20px;
     }
 
-    h1, #nav, #sort {
-        padding-left: 2rem;
+    section {
+      margin-bottom: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 5px;
     }
 
-    #card .newsh {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #111;
+    ul {
+      padding-left: 20px;
     }
 
-    #card small {
-        color: #666;
-        padding-bottom: 5rem;
-    }
-    #card span {
-        color: #444;
+    ul li {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
     }
 
-    #card {
-        padding: 1rem;
-        border: none;
-        border-radius: 0.5rem;
-        box-shadow: 1px 1px 8px #999;
-        margin: 2rem 1rem;
-        animation: load 2s;
-    }
-    button {
-        background: purple;
-        color: white;
-        font-weight: bold;
-        border-radius: 2rem;
-        padding: 0.4rem 1rem;
-        border: none;
-        margin-top: 1rem;
+    .page {
+      display: none;
     }
 
-    #bottom {
-        height: 3rem;
-        background: #226;
-        color: #ccc;
-        width: 100%;
-        padding: 1rem 0;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 2rem;
+    .page.active {
+      display: block;
     }
 
-    #main {
-        max-width: 640px;
-        /* display: flex; */
-    }
-    #nta {
-        margin: 1rem;
-    }
-
-    @keyframes load {
-        0% {
-            opacity: 0;
-            margin-top: 10rem;
-        }
-        60% {
-            opacity: 0;
-            margin-top: 10rem;
-        }
-        100% {
-            opacity: 1;
-            margin-top: 2rem;
-        }
+    footer {
+      background: #002147;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
-    @keyframes load2 {
-        0% {
-            opacity: 0;
-            margin-top: 10rem;;
-        }
-        100% {
-            opacity: 1;
-            margin-top: 0
-        }
+    .footer-links a {
+      color: #aaa;
+      margin-right: 15px;
+      text-decoration: none;
     }
 
+    .footer-links {
+      margin-bottom: 10px;
+    }
+
+    .back-btn {
+      margin-top: 10px;
+      display: inline-block;
+      background: #002147;
+      color: white;
+      padding: 6px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    /* Prank popup */
     #shubh {
-        position: fixed;
-        width: 100vw;
-        max-width: 640px;
-        height: 100vh;
-        background: black;
-        display: none;
-        animation: load2 1s;
-        top: 0;
-        left: 0;
-        pointer-events: none;
+      position: fixed;
+      width: 100vw;
+      max-width: 640px;
+      height: 100vh;
+      background: black;
+      display: none;
+      animation: load2 1s;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1000;
+      text-align: center;
+      padding-top: 3rem;
     }
 
     #shubh img {
-        width: 100vw;
-        margin-bottom: 2rem;
-        max-width: 640px;
-
+      width: 80%;
+      max-width: 640px;
+      margin-bottom: 2rem;
     }
 
     #shubh span {
-        font-size: 2rem;
-        font-weight: bold;
-        color: white;
-        text-align: center;
-        width: 100vw;
-        max-width: 640px;
-
-        display: block;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      width: 100%;
+      display: block;
     }
 
-    #cookie {
-        display: none;
-        position: fixed;
-        top: 5rem;
-        left: 2rem;
-        width: calc(100% - 7rem);
-        background: #336;
-        color: #ddd;
-        padding: 1.5rem;
-        max-width: calc(640px - 6rem);
-        border-radius: 0.5rem;
-        box-shadow: 0 0 50rem 50rem #5557;
-        animation: load2 2s;
+    @keyframes load2 {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
-</style>
+  </style>
+</head>
 <body>
-    <div id="shubh">
-        <img src="modi.jpg">
-        <span>"April Fool Banaya"</span><br>
-        <span><small> - Modi, PM (India)</small></span><br><br>
-        <span>"Share karo re sabko"</span><br>
-        <span><small> - Parth, Dev & Pranshav ,creators</small></span>
+
+  <!-- Prank Popup -->
+  <div id="shubh">
+    <img src="modi.jpg" alt="Prank Image">
+    <span>"April Fool Banaya"</span><br>
+    <span><small> - Modi, PM (India)</small></span><br><br>
+    <span>"Share karo re sabko"</span><br>
+    <span><small> - Parth, Dev & Pranshav, creators</small></span>
+  </div>
+
+  <header>
+    <div class="top-bar">
+      <p>Government of India | Ministry of Education</p>
     </div>
-    <div id="banner1">
-        <img src="emblem.png">
-        <a href=""><small>उच्च शिक्षा विभाग</small><br>
-            <span>Department of Higher Education</span></span></a>
+    <div class="logo-bar">
+      <img src="https://www.nta.ac.in/images/NTA_logo.png" alt="NTA Logo"/>
+      <h1>Department of Higher Education</h1>
     </div>
-    <!-- <img id='nta'src="nta.bmp"> -->
+    <nav>
+      <ul>
+        <li>Joint Entrance Examination (Main)</li>
+        <li>JEE(Main)</li>
+      </ul>
+    </nav>
+  </header>
 
-    <div id='banner2'>
-        
-    <span>संयुक्त प्रवेश परीक्षा (मुख्य)</span><br>
-    <span>Joint Entrance Examination (Main)</span><br>
-    <span>JEE(Main)</span><br>
+  <main>
+    <!-- Home Page -->
+    <section id="home" class="page active">
+      <section class="notices">
+          
+        <h3>Public Notices</h3>
+        <ul>
+            <li onclick="triggerPrank('answer-key')">Declaration of Joint Entrance Examination [JEE(Main) 2025] Session 2 Scores for Paper 1 B.E/B Tech.</li>
+            <li onclick="triggerPrank('answer-key')">JEE(Main) April 2025 Session 2 Final Answer Key of B.E/B Tech as of 18.04.2025</li>
+          <li onclick="triggerPrank('answer-key')">Display of Provisional Answer Keys and Recorded Response Sheet for JEE(Main) April 2025.</li>
+          <li onclick="triggerPrank('exam-centre')">Intimation regarding change of Examination Centre of some candidates of JEE(Main) 2025.</li>
+          <li onclick="triggerPrank('admit-card')">Release of Admit Cards for April 2025 JEE(Main) Session 2.</li>
+          <li onclick="triggerPrank('exam-city')">Advance Intimation for Allotment of Exam City.</li>
+        </ul>
+      </section>
 
+      <section class="intro">
+        <h3>INTRODUCTION</h3>
+        <p>The Ministry of Education (MoE), Government of India (GoI) has established the National Testing Agency (NTA) as an independent, autonomous, and self-sustained premier testing organization...</p>
+      </section>
+
+      <section class="candidate-activity">
+        <h3>Candidate Activity</h3>
+        <ul>
+          <li onclick="triggerPrank('answer-key')">JEE(Main) 2025 Session 2: Answer Key Challenge</li>
+          <li onclick="triggerPrank('admit-card')">Download Admit Card</li>
+          <li onclick="triggerPrank('exam-city')">Session 1 Results for Paper 2 (B.Arch/B.Planning)</li>
+        </ul>
+      </section>
+    </section>
+
+    <!-- Other Pages -->
+    <section id="answer-key" class="page">
+      <h2>Provisional Answer Key</h2>
+      <p>This is the official page for downloading the answer key of JEE(Main) April 2025.</p>
+      <a href="#" class="back-btn" onclick="triggerPrank('home')">Back to Home</a>
+    </section>
+
+    <section id="exam-centre" class="page">
+      <h2>Exam Centre Change Notice</h2>
+      <p>This page contains information about changes in exam centres for some candidates.</p>
+      <a href="#" class="back-btn" onclick="triggerPrank('home')">Back to Home</a>
+    </section>
+
+    <section id="admit-card" class="page">
+      <h2>Admit Card Release</h2>
+      <p>Admit cards for April 2025 JEE(Main) Session 2 are now available for download.</p>
+      <a href="#" class="back-btn" onclick="triggerPrank('home')">Back to Home</a>
+    </section>
+
+    <section id="exam-city" class="page">
+      <h2>Exam City Intimation</h2>
+      <p>This section provides advance information about the examination city for JEE(Main) 2025 candidates.</p>
+      <a href="#" class="back-btn" onclick="triggerPrank('home')">Back to Home</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Contact Us</a>
+      <a href="#">Ministry of Education</a>
+      <a href="#">National Testing Agency</a>
+      <a href="#">JEE Advance</a>
     </div>
+    <p>© National Testing Agency. Last Updated: Apr 18, 2025</p>
+  </footer>
 
-    <div id='scrollNews'>
-        <span>
-        <b>NEW</b>: Reassignment of Centres for Joint Entrance Examination (JEE) for the second session has be rescheduled. Refer to Notifications section for the detailed datesheet.
-        </span>
-    
-    </div>
-    <div id="main">
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+      window.scrollTo(0, 0);
+    }
 
-    <small id='nav'><font color='#f11'>Home</font> > <font color='#f11'>Notifications</font> > Latest</small>
-    <h1>Notifications</h1>
-
-    <span id="sort">Sort by: </span>
-    <select>
-        <option>Latest</option>
-        <option>Relevance</option>
-    </select>
-
-    <div id='card'>
-        <span class='newsh'>PUBLIC NOTICE: Reassigning the Centres for JEE(Main) –2025 Session 2</span><br>
-        <small>31 March, 2025<br><br></small>
-        <span>The Centres for Joint Entrance Examination (JEE) for the second session has be reassigned.This inconvenience happened because of apparent miscommunication glitch between schools and NTA. The datesheet attached...</span><br>
-        <button>Read More</button>&nbsp;&nbsp;&nbsp;<b>Share</b>
-    </div>
-
-    <div id='card'>
-        <span class='newsh'>Public Notice: Reassigning the Centres for JEE(Main) 2025 Session 2</span><br>
-        <small>30 March, 2025<br><br></small>
-        <span>The Centres for Joint Entrance Examination (JEE)-2025 for the second session has be reassigned. This inconvenience happened because of apparent miscommunication software glitch between schools and NTA. Below is...</span><br>
-        <button>Read More</button>&nbsp;&nbsp;&nbsp;<b>Share</b>
-    </div>
-
-    <div id='card'>
-        <span class='newsh'>Public Notice for JEE(Main) 2025</span><br>
-        <small>3 March, 2025<br><br></small>
-        <span>Public Notice for JEE(Main) 2025 (Hindi/ English)<br>Download PDF document</span><br>
-        <button>Read More</button>&nbsp;&nbsp;&nbsp;<b>Share</b>
-    </div>
-    </div>
-
-    <span style="color: red; width: 6rem;">Load more</span>
-<audio src="song.mp3" preload="auto"></audio>
-<div id="bottom">
-<span>Content Owned and Maintained by National Testing Agency</span><br>
-<span>Designed, and Developed by National Informatics Centre,</span><br>
-<span>Ministry of Electronics & Information Technology, GoI</span>
-</div> 
-
-<script>
-    setTimeout(() => {
-        window.addEventListener('click', () => {
-            elem = document.querySelector('body > #shubh')
-            elem.style.display = 'block'
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) { /* Safari */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE11 */
-                elem.msRequestFullscreen();
-            }
-            if (document.querySelector('body > audio').currentTime == 0) {
-                document.querySelector('body > audio').play()
-                document.querySelector('body > audio').currentTime = 2.7
-            }
-
-        })
-    }, 2000)
-
-    setTimeout(() => {
-        if (document.querySelector('body > audio').currentTime == 0) {
-            document.querySelector('body > #cookie').style.display = 'block'
-        }
-    }, 20000)
-    
-</script>
+    function triggerPrank(targetPage) {
+      const prank = document.getElementById('shubh');
+      prank.style.display = 'block';
+      setTimeout(() => {
+        prank.style.display = 'none';
+        showPage(targetPage);
+      }, 4000); // Show prank for 4 seconds
+    }
+  </script>
 </body>
 </html>
